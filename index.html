@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>15 Funciones en JavaScript</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 Funciones</title>
+  <link href="dist/output.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
 
-    <h1>15 Funciones en JavaScript</h1>
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl p-6 md:p-8">
+    
+    <!-- Encabezado -->
+    <h1 class="text-3xl font-extrabold text-slate-800 text-center mb-6">
+       15 Funciones
+    </h1>
 
-    <label>Primer número:</label>
-    <input type="number" id="numero1">
+    <!-- Formulario de entradas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div>
+        <label for="numero1" class="block text-sm font-semibold text-slate-700 mb-1">
+          Primer número:
+        </label>
+        <input 
+          type="number" 
+          id="numero1" 
+          placeholder="Ej. 10"
+          class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+        >
+      </div>
 
-    <br><br>
+      <div>
+        <label for="numero2" class="block text-sm font-semibold text-slate-700 mb-1">
+          Segundo número:
+        </label>
+        <input 
+          type="number" 
+          id="numero2" 
+          placeholder="Ej. 5"
+          class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+        >
+      </div>
+    </div>
 
-    <label>Segundo número:</label>
-    <input type="number" id="numero2">
+    <!-- Cuadrícula de Botones -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-6">
+      <button onclick="sumar()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Sumar</button>
+      <button onclick="restar()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Restar</button>
+      <button onclick="multiplicar()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Multiplicar</button>
+      <button onclick="dividir()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Dividir</button>
+      <button onclick="potencia()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Potencia</button>
+      <button onclick="promedio()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Promedio</button>
+      <button onclick="cuadrado()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Cuadrado</button>
+      <button onclick="cubo()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Cubo</button>
+      <button onclick="mayor()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Mayor</button>
+      <button onclick="menor()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Menor</button>
+      <button onclick="esPar()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">¿Es par?</button>
+      <button onclick="esImpar()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">¿Es impar?</button>
+      <button onclick="factorial()" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Factorial</button>
+      <button onclick="areaCirculo()" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors">Área círculo</button>
+      <button onclick="celsiusAFahrenheit()" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-lg text-sm shadow transition-colors col-span-2 sm:col-span-1">Celsius a Fahren.</button>
+    </div>
 
-    <br><br>
+    <!-- Sección de Resultado -->
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+      <span class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+        Resultado
+      </span>
+      <div id="resultado" class="text-2xl font-bold text-slate-800 min-h-[32px]">
+        --
+      </div>
+    </div>
 
-    <button onclick="sumar()">Sumar</button>
-    <button onclick="restar()">Restar</button>
-    <button onclick="multiplicar()">Multiplicar</button>
-    <button onclick="dividir()">Dividir</button>
-    <button onclick="potencia()">Potencia</button>
-    <button onclick="promedio()">Promedio</button>
-    <button onclick="cuadrado()">Cuadrado</button>
-    <button onclick="cubo()">Cubo</button>
-    <button onclick="mayor()">Mayor</button>
-    <button onclick="menor()">Menor</button>
-    <button onclick="esPar()">¿Es par?</button>
-    <button onclick="esImpar()">¿Es impar?</button>
-    <button onclick="factorial()">Factorial</button>
-    <button onclick="areaCirculo()">Área círculo</button>
-    <button onclick="celsiusFahrenheit()">Celsius a Fahrenheit</button>
+  </div>
 
-    <h2 id="resultado">Resultado:</h2>
-
-    <script src="app.js"></script>
-
+  <script src="app.js"></script>
 </body>
 </html>
